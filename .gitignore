@@ -1,0 +1,20 @@
+node_modules/
+.next/
+.env
+.env.local
+.env.*.local
+dist/
+build/
+
+# Secrets — NEVER commit
+*.key
+*.pem
+service-account.json
+nabis-credentials.json
+
+# Dev
+.DS_Store
+*.log
+
+# Prisma
+packages/db/generated/

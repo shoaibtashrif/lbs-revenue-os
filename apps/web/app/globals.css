@@ -1,0 +1,345 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import './menu/menu.css';
+@import './desk/desk.css';
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   lbs. Revenue OS — Design System
+   
+   Brand identity: premium, dark, scarce, urgent.
+   Cannabis B2B wholesale — sophisticated operators, not dispensary retail.
+   ───────────────────────────────────────────────────────────────────────────── */
+
+:root {
+  /* ─── Color Tokens ────────────────────────────────────────────────────── */
+
+  /* Neutrals — near-black base */
+  --color-void:       #080808;
+  --color-surface-0:  #0d0d0d;
+  --color-surface-1:  #131313;
+  --color-surface-2:  #1a1a1a;
+  --color-surface-3:  #222222;
+  --color-surface-4:  #2a2a2a;
+  --color-border:     #2e2e2e;
+  --color-border-subtle: #1f1f1f;
+
+  /* lbs. Brand Gold — the one accent color */
+  --color-gold:       #c9a84c;
+  --color-gold-light: #e4c87b;
+  --color-gold-dim:   #7a6330;
+  --color-gold-glow:  rgba(201, 168, 76, 0.12);
+  --color-gold-glow-strong: rgba(201, 168, 76, 0.25);
+
+  /* Text */
+  --color-text-primary:   #f5f5f0;
+  --color-text-secondary: #9a9a95;
+  --color-text-tertiary:  #5a5a56;
+  --color-text-inverse:   #080808;
+
+  /* Semantic */
+  --color-success:    #4caf7a;
+  --color-success-bg: rgba(76, 175, 122, 0.1);
+  --color-warning:    #e8a03c;
+  --color-warning-bg: rgba(232, 160, 60, 0.1);
+  --color-danger:     #e85c4a;
+  --color-danger-bg:  rgba(232, 92, 74, 0.1);
+  --color-info:       #5a9cf0;
+  --color-info-bg:    rgba(90, 156, 240, 0.1);
+
+  /* Scarcity signalling */
+  --color-scarce:     #e85c4a;   /* red — last few */
+  --color-low:        --color-warning; /* orange — low stock */
+  --color-new-drop:   var(--color-gold); /* gold — new drop */
+
+  /* ─── Brand Colors by House ────────────────────────────────────────────── */
+  --color-brand-wct:      #3a7d44;  /* West Coast Treez — deep green */
+  --color-brand-wct-glow: rgba(58, 125, 68, 0.15);
+  --color-brand-puff:     #8B5CF6;  /* PUFF — violet */
+  --color-brand-puff-glow: rgba(139, 92, 246, 0.15);
+  --color-brand-connected: #c9a84c; /* Connected — gold (premium) */
+  --color-brand-alien:    #3ecfb2;  /* Alien Labs — teal/alien */
+  --color-brand-alien-glow: rgba(62, 207, 178, 0.15);
+  --color-brand-simply:   #6b9fd4;  /* Simply Cannabis — blue */
+  --color-brand-self-baked: #d4956b; /* Self Baked — warm orange */
+  --color-brand-hdp:      #9d7bc8;  /* High Desert Pure — purple */
+
+  /* ─── Typography ─────────────────────────────────────────────────────── */
+  --font-display:   'Space Grotesk', 'Inter', system-ui, sans-serif;
+  --font-body:      'Inter', system-ui, sans-serif;
+  --font-mono:      'JetBrains Mono', 'Fira Code', monospace;
+
+  --text-xs:   0.6875rem;  /* 11px */
+  --text-sm:   0.8125rem;  /* 13px */
+  --text-base: 0.9375rem;  /* 15px */
+  --text-md:   1.0625rem;  /* 17px */
+  --text-lg:   1.25rem;    /* 20px */
+  --text-xl:   1.5rem;     /* 24px */
+  --text-2xl:  2rem;       /* 32px */
+  --text-3xl:  2.5rem;     /* 40px */
+  --text-4xl:  3.5rem;     /* 56px */
+  --text-5xl:  5rem;       /* 80px */
+
+  --weight-light:    300;
+  --weight-regular:  400;
+  --weight-medium:   500;
+  --weight-semibold: 600;
+  --weight-bold:     700;
+  --weight-extrabold: 800;
+  --weight-black:    900;
+
+  --leading-tight:   1.15;
+  --leading-snug:    1.3;
+  --leading-normal:  1.5;
+  --leading-relaxed: 1.7;
+
+  --tracking-tight:  -0.03em;
+  --tracking-snug:   -0.015em;
+  --tracking-normal: 0;
+  --tracking-wide:   0.05em;
+  --tracking-wider:  0.12em;
+  --tracking-widest: 0.2em;
+
+  /* ─── Spacing ─────────────────────────────────────────────────────────── */
+  --space-0:   0;
+  --space-1:   0.25rem;
+  --space-2:   0.5rem;
+  --space-3:   0.75rem;
+  --space-4:   1rem;
+  --space-5:   1.25rem;
+  --space-6:   1.5rem;
+  --space-8:   2rem;
+  --space-10:  2.5rem;
+  --space-12:  3rem;
+  --space-16:  4rem;
+  --space-20:  5rem;
+  --space-24:  6rem;
+  --space-32:  8rem;
+
+  /* ─── Radius ──────────────────────────────────────────────────────────── */
+  --radius-sm:  4px;
+  --radius-md:  8px;
+  --radius-lg:  12px;
+  --radius-xl:  16px;
+  --radius-2xl: 24px;
+  --radius-full: 9999px;
+
+  /* ─── Shadows / Glows ─────────────────────────────────────────────────── */
+  --shadow-sm:      0 1px 3px rgba(0,0,0,0.5);
+  --shadow-md:      0 4px 12px rgba(0,0,0,0.6);
+  --shadow-lg:      0 8px 32px rgba(0,0,0,0.7);
+  --shadow-xl:      0 16px 48px rgba(0,0,0,0.8);
+  --glow-gold:      0 0 24px var(--color-gold-glow-strong),
+                    0 0 48px var(--color-gold-glow);
+  --glow-gold-sm:   0 0 12px var(--color-gold-glow-strong);
+  --glow-success:   0 0 16px rgba(76, 175, 122, 0.25);
+  --glow-danger:    0 0 16px rgba(232, 92, 74, 0.25);
+
+  /* ─── Transitions ─────────────────────────────────────────────────────── */
+  --ease-out-expo:  cubic-bezier(0.19, 1, 0.22, 1);
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+  --ease-in-out:    cubic-bezier(0.4, 0, 0.2, 1);
+  --duration-fast:  120ms;
+  --duration-base:  220ms;
+  --duration-slow:  380ms;
+  --duration-slower: 600ms;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   Reset
+   ───────────────────────────────────────────────────────────────────────────── */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-normal);
+  color: var(--color-text-primary);
+  background-color: var(--color-void);
+  min-height: 100vh;
+}
+
+img, video, svg {
+  display: block;
+  max-width: 100%;
+}
+
+input, textarea, select, button {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   Utility Classes
+   ───────────────────────────────────────────────────────────────────────────── */
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.container {
+  width: 100%;
+  max-width: 1320px;
+  margin-inline: auto;
+  padding-inline: var(--space-6);
+}
+
+.container--narrow {
+  max-width: 900px;
+}
+
+.container--wide {
+  max-width: 1600px;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   Typography utilities
+   ───────────────────────────────────────────────────────────────────────────── */
+
+.text-display {
+  font-family: var(--font-display);
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--tracking-tight);
+  line-height: var(--leading-tight);
+}
+
+.text-label {
+  font-size: var(--text-xs);
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--color-text-tertiary);
+}
+
+.text-mono {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   lbs. Wordmark
+   ───────────────────────────────────────────────────────────────────────────── */
+
+.lbs-wordmark {
+  font-family: var(--font-display);
+  font-weight: var(--weight-black);
+  letter-spacing: var(--tracking-tight);
+  color: var(--color-gold);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   Animations
+   ───────────────────────────────────────────────────────────────────────────── */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes pulse-gold {
+  0%, 100% {
+    box-shadow: 0 0 0 0 var(--color-gold-glow);
+  }
+  50% {
+    box-shadow: 0 0 0 6px transparent, 0 0 16px var(--color-gold-glow-strong);
+  }
+}
+
+@keyframes blink-scarce {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.5; }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes ticker-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes countdown-pulse {
+  0%, 100% { color: var(--color-warning); }
+  50%       { color: var(--color-scarce); }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   Scrollbar
+   ───────────────────────────────────────────────────────────────────────────── */
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-surface-1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-gold-dim);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   Focus
+   ───────────────────────────────────────────────────────────────────────────── */
+
+:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}

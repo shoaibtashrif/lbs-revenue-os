@@ -1,0 +1,22 @@
+{
+  "name": "lbs-revenue-os",
+  "private": true,
+  "version": "0.1.0",
+  "packageManager": "pnpm@9.0.0",
+  "scripts": {
+    "dev": "pnpm --filter @lbs/web dev",
+    "build": "pnpm --filter @lbs/web build",
+    "start": "pnpm --filter @lbs/web start",
+    "db:generate": "pnpm --filter @lbs/db db:generate",
+    "db:migrate": "pnpm --filter @lbs/db db:migrate",
+    "db:studio": "pnpm --filter @lbs/db db:studio",
+    "db:seed": "pnpm --filter @lbs/db db:seed",
+    "test": "pnpm -r test",
+    "lint": "pnpm -r lint",
+    "type-check": "pnpm -r type-check"
+  },
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ]
+}
